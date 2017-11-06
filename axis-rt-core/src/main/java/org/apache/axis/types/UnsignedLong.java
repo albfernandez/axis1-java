@@ -81,10 +81,13 @@ public class UnsignedLong extends java.lang.Number
     private Object __equalsCalc = null;
 
     public synchronized boolean equals(Object obj) {
-        if (!(obj instanceof UnsignedLong)) return false;
+        if (!(obj instanceof UnsignedLong)) {
+        	return false;
+        }
         UnsignedLong other = (UnsignedLong) obj;
-        if (obj == null) return false;
-        if (this == obj) return true;
+        if (this == obj) {
+        	return true;
+        }
         if (__equalsCalc != null) {
             return (__equalsCalc == obj);
         }
@@ -100,12 +103,15 @@ public class UnsignedLong extends java.lang.Number
 
     // implement java.lang.comparable interface
     public int compareTo(Object obj) {
-        if (lValue != null)
-            return lValue.compareTo(obj);
-        else if (equals(obj) == true)
+        if (lValue != null && obj instanceof BigInteger) {
+            return lValue.compareTo((BigInteger) obj);
+        }
+        else if (equals(obj) == true) {
             return 0;  // null == null
-        else
+        }
+        else {
             return 1;  // object is greater
+        }
     }
 
     // Implement java.lang.Number interface

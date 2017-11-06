@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package org.apache.axis.enum;
+package org.apache.axis.enums;
 
 /**
  * Simple wrapper around org.apache.axis.constants.Scope

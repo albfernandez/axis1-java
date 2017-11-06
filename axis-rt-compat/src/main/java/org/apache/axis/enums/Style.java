@@ -14,12 +14,16 @@
  * limitations under the License.
  */
 
-package org.apache.axis.enum;
+package org.apache.axis.enums;
+
+import org.apache.axis.deployment.wsdd.WSDDConstants;
+
+import javax.xml.namespace.QName;
 
 /**
- * Simple wrapper around org.apache.axis.constants.Use
+ * Simple wrapper around org.apache.axis.constants.Style
  * @author dims@yahoo.com
  * @deprecated please use org.apache.axis.constants.Scope
  */
-public class Use extends org.apache.axis.constants.Use {
-};
+public class Style extends org.apache.axis.constants.Style {
+}

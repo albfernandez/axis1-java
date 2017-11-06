@@ -82,7 +82,7 @@
         <module>axis-war</module>
         <module>daemon-launcher</module>
         <module>distribution</module>
-        <module>integration</module>
+<!--         <module>integration</module> -->
         <module>interop-mock</module>
         <module>jetty-daemon</module>
         <module>maven</module>
@@ -185,7 +185,7 @@
                 <plugin>
                     <artifactId>maven-javadoc-plugin</artifactId>
                     <configuration>
-                        <source>1.4</source>
+                        <source>1.6</source>
                     </configuration>
                 </plugin>
                 <plugin>
@@ -455,7 +455,9 @@
         </plugins>
     </reporting>
     <properties>
-        <javaVersion>1.4</javaVersion>
+        <javaVersion>1.6</javaVersion>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <baseUrl>http://axis.apache.org/axis/java</baseUrl>
         <baseSiteUrl>scm:svn:https://svn.apache.org/repos/asf/axis/site/axis/java</baseSiteUrl>
     </properties>
