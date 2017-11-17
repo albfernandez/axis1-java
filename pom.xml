@@ -59,7 +59,7 @@
     <modules>
         <module>apidocs</module>
         <module>axis</module>
-<!--         <module>axis-ant</module> -->
+        <module>axis-ant</module>
         <module>axis-codegen</module>
         <module>axis-jaxrpc</module>
         <module>axis-model</module>
