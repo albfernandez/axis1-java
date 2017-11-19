@@ -16,13 +16,7 @@
         targetNamespace="urn:ref.types"
         xmlns:xsd="http://www.w3.org/1999/XMLSchema">
 
-      <xsd:simpleType name="enum">
-        <xsd:restriction base="xsd:string">
-          <xsd:enumeration value="one"/>                      
-          <xsd:enumeration value="two"/>                    
-          <xsd:enumeration value="three"/>                    
-        </xsd:restriction>
-      </xsd:simpleType>
+
 
       <xsd:complexType name="phone">
         <xsd:all>
@@ -65,7 +59,6 @@
 
       <!-- enum element which is the same as the enum type -->
       <!-- no mangling should occur since the same java type is used -->
-      <xsd:element name="enum" type="typens:enum"/>
 
       <!-- This is a 'forward use' of a type.  Not sure if this is legal, but we currently accept it -->
       <xsd:element name="forward"  type="typens:forward" />
@@ -105,7 +98,6 @@
           <!-- This is a reference to phone.  It should be a collection since the
               phone element has the unbounded attribute -->
           <xsd:element ref="typens:phone"/>
-          <xsd:element ref="typens:enum"/>
           <xsd:element name="forward" type="typens:forward"/>
           <xsd:element ref="typens:noMangle"/>
           <xsd:element name="noMangle2" type="typens:noMangle"/>

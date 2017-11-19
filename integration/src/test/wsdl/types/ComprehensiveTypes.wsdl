@@ -31,13 +31,6 @@
         <xsd:restriction base="xsd2:dateTime" />
       </xsd:simpleType>
       
-      <xsd:simpleType name="enum">
-        <xsd:restriction base="xsd:string">
-          <xsd:enumeration value="one"/>                      
-          <xsd:enumeration value="two"/>                    
-          <xsd:enumeration value="three"/>                    
-        </xsd:restriction>
-      </xsd:simpleType>
 
       <xsd:complexType name="array">
         <xsd:complexContent>
@@ -96,7 +89,7 @@
         </xsd:sequence>
       </xsd:complexType>
 
-      <xsd:element name="enumValue" type="typens:enum"/>
+<!--       <xsd:element name="sampleEnumValue" type="typens:sampleEnum"/> -->
 
       <xsd:complexType name="time">
         <xsd:simpleContent>
@@ -329,7 +322,7 @@
         </xsd:complexType>
 
         <!-- Collection of enums -->
-        <xsd:element name="three" type="typens:enum" maxOccurs="unbounded" />
+<!--         <xsd:element name="three" type="typens:sampleEnum" maxOccurs="unbounded" /> -->
 
 
         <!-- Test for nested defined complexType -->
@@ -779,10 +772,6 @@
     <part name="soapencBase64" type="soapenc:base64"/>
   </message>
                      
-  <message name="enum">
-    <part name="enum" type="typens:enum"/>
-  </message>
-
   <message name="enumInt">
     <part name="enumInt" type="typens:enumInt"/>
   </message>
@@ -845,22 +834,7 @@
       <input message="tns:empty"/>
       <output message="tns:allPrimitives"/>
     </operation>
-    <operation name="enumIn">
-      <input message="tns:enum"/>
-      <output message="tns:empty"/>
-    </operation>
-    <operation name="enumInout">
-      <input message="tns:enum"/>
-      <output message="tns:enum"/>
-    </operation>
-    <operation name="enumOut" parameterOrder="enum">
-      <input message="tns:empty"/>
-      <output message="tns:enum"/>
-    </operation>
-    <operation name="enumReturn">
-      <input message="tns:empty"/>
-      <output message="tns:enum"/>
-    </operation>
+
     <operation name="enumIntIn">
       <input message="tns:enumInt"/>
       <output message="tns:empty"/>
@@ -1250,66 +1224,7 @@
             encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
       </output>
     </operation>
-    <operation name="enumIn">
-      <soap:operation soapAction=""/>
-      <input>
-        <soap:body
-            use="encoded"
-            namespace=""
-            encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
-      </input>
-      <output>
-        <soap:body
-            use="encoded"
-            namespace=""
-            encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
-      </output>
-    </operation>
-    <operation name="enumInout">
-      <soap:operation soapAction=""/>
-      <input>
-        <soap:body
-            use="encoded"
-            namespace=""
-            encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
-      </input>
-      <output>
-        <soap:body
-            use="encoded"
-            namespace=""
-            encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
-      </output>
-    </operation>
-    <operation name="enumOut">
-      <soap:operation soapAction=""/>
-      <input>
-        <soap:body
-            use="encoded"
-            namespace=""
-            encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
-      </input>
-      <output>
-        <soap:body
-            use="encoded"
-            namespace=""
-            encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
-      </output>
-    </operation>
-    <operation name="enumReturn">
-      <soap:operation soapAction=""/>
-      <input>
-        <soap:body
-            use="encoded"
-            namespace=""
-            encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
-      </input>
-      <output>
-        <soap:body
-            use="encoded"
-            namespace=""
-            encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
-      </output>
-    </operation>
+
     <operation name="enumIntIn">
       <soap:operation soapAction=""/>
       <input>

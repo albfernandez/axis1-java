@@ -35,8 +35,6 @@ public class RefTestServiceTestCase extends junit.framework.TestCase {
         phone.setExchange("555");
         phone.setNumber(new PhoneNumber());
         info.setPhone(new Phone[] { phone });
-        Enum en  = Enum.fromValue("one");
-        info.setEnum(en);
         Forward forward  = new Forward();
         forward.setAddress("test");
         info.setForward(forward);

@@ -47,7 +47,7 @@ import test.wsdl.types.comprehensive_types.ComplexAll;
 import test.wsdl.types.comprehensive_types.ComplexSequence;
 import test.wsdl.types.comprehensive_types.ComplexWComplex;
 import test.wsdl.types.comprehensive_types.EmptyComplexType;
-import test.wsdl.types.comprehensive_types.Enum;
+//import test.wsdl.types.comprehensive_types.SampleEnum;
 import test.wsdl.types.comprehensive_types.PersionCat;
 import test.wsdl.types.comprehensive_types.Time;
 import test.wsdl.types.comprehensive_types.Yarn;
@@ -60,7 +60,7 @@ import test.wsdl.types.comprehensive_types.holders.ComplexAllHolder;
 import test.wsdl.types.comprehensive_types.holders.ComplexSequenceHolder;
 import test.wsdl.types.comprehensive_types.holders.ComplexWComplexHolder;
 import test.wsdl.types.comprehensive_types.holders.EmptyComplexTypeHolder;
-import test.wsdl.types.comprehensive_types.holders.EnumHolder;
+//import test.wsdl.types.comprehensive_types.holders.SampleEnumHolder;
 import test.wsdl.types.comprehensive_types2.A;
 import test.wsdl.types.comprehensive_types2.B;
 
@@ -279,28 +279,28 @@ public class VerifyTestCase extends junit.framework.TestCase {
         } catch (java.rmi.RemoteException re) {
             throw new junit.framework.AssertionFailedError("allPrimitivesOut Exception caught: " + re );
         }
-        try {
-            binding.enumIn(Enum.one);
-        } catch (java.rmi.RemoteException re) {
-            throw new junit.framework.AssertionFailedError("enumIn Exception caught: " + re );
-        }
-        try {
-            binding.enumInout(new EnumHolder(Enum.two));
-        } catch (java.rmi.RemoteException re) {
-            throw new junit.framework.AssertionFailedError("enumInout Exception caught: " + re );
-        }
-        try {
-            EnumHolder value = new EnumHolder();
-            binding.enumOut(value);
-        } catch (java.rmi.RemoteException re) {
-            throw new junit.framework.AssertionFailedError("enumOut Exception caught: " + re );
-        }
-        try {
-            Enum value = null;
-            value = binding.enumReturn();
-        } catch (java.rmi.RemoteException re) {
-            throw new junit.framework.AssertionFailedError("enumReturn Exception caught: " + re );
-        }
+//        try {
+//            binding.enumIn(SampleEnum.one);
+//        } catch (java.rmi.RemoteException re) {
+//            throw new junit.framework.AssertionFailedError("enumIn Exception caught: " + re );
+//        }
+//        try {
+//            binding.enumInout(new EnumHolder(SampleEnum.two));
+//        } catch (java.rmi.RemoteException re) {
+//            throw new junit.framework.AssertionFailedError("enumInout Exception caught: " + re );
+//        }
+//        try {
+//            EnumHolder value = new EnumHolder();
+//            binding.enumOut(value);
+//        } catch (java.rmi.RemoteException re) {
+//            throw new junit.framework.AssertionFailedError("enumOut Exception caught: " + re );
+//        }
+//        try {
+//            SampleEnum value = null;
+//            value = binding.sampleEnumReturn();
+//        } catch (java.rmi.RemoteException re) {
+//            throw new junit.framework.AssertionFailedError("sampleEnumReturn Exception caught: " + re );
+//        }
         try {
             binding.arrayIn(new String[] {"hi", "ho"});
         } catch (java.rmi.RemoteException re) {

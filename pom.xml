@@ -82,7 +82,7 @@
         <module>axis-war</module>
         <module>daemon-launcher</module>
         <module>distribution</module>
-<!--         <module>integration</module> -->
+        <module>integration</module>
         <module>interop-mock</module>
         <module>jetty-daemon</module>
         <module>maven</module>
