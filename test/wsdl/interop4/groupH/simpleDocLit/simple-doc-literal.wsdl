@@ -32,7 +32,7 @@
 				</sequence>
 			</complexType>
 
-			<simpleType name="Enum">
+			<simpleType name="Enumeration">
 				<restriction base="xsd:int">
 					<enumeration value="1"/>
 					<enumeration value="2"/>
@@ -57,7 +57,7 @@
 			<element name="ArrayOfIntPart" type="ns2:ArrayOfInt"/>
 			<element name="ArrayOfFloatPart" type="ns2:ArrayOfFloat"/>
 			<element name="String2Part" type="xsd:string"/>
-			<element name="EnumPart" type="ns2:Enum"/>
+			<element name="EnumPart" type="ns2:Enumeration"/>
 
 		</schema>
 
@@ -128,7 +128,7 @@
 					<sequence>
 						<element name="whichFault" type="xsd:int"/>
 						<element name="param1" type="xsd:int"/>
-						<element name="param2" type="ns2:Enum"/>
+						<element name="param2" type="ns2:Enumeration"/>
 					</sequence>
 				</complexType>
 			</element>

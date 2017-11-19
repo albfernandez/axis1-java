@@ -43,7 +43,7 @@
 				</complexContent>
 			</complexType>
 
-			<simpleType name="Enum">
+			<simpleType name="Enumeration">
 				<restriction base="int">
 					<enumeration value="1"/>
 					<enumeration value="2"/>
@@ -79,7 +79,7 @@
 	<message name="echoMultipleFaults4Request">
 		<part name="whichFault" type="xsd:int"/>
 		<part name="param1" type="xsd:int"/>
-		<part name="param2" type="ns2:Enum"/>
+		<part name="param2" type="ns2:Enumeration"/>
 	</message>
 
 	<!-- Fault messages -->
@@ -111,7 +111,7 @@
 		<part name="part2" type="xsd:string"/>
 	</message>
 	<message name="EnumFault">
-		<part name="part9" type="ns2:Enum"/>
+		<part name="part9" type="ns2:Enumeration"/>
 	</message>
 
 	<portType name="SimpleRpcEncPortType">

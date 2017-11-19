@@ -285,14 +285,14 @@
       <s:element name="echoEnum">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="inputEnum" type="s1:Enum" />
+            <s:element minOccurs="1" maxOccurs="1" name="inputEnum" type="s1:Enumeration" />
           </s:sequence>
         </s:complexType>
       </s:element>
       <s:element name="echoEnumResponse">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="return" type="s1:Enum" />
+            <s:element minOccurs="1" maxOccurs="1" name="return" type="s1:Enumeration" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -387,7 +387,7 @@
           </s:choice>
         </s:sequence>
       </s:complexType>
-      <s:simpleType name="Enum">
+      <s:simpleType name="Enumeration">
         <s:restriction base="s:string">
           <s:enumeration value="BitOne" />
           <s:enumeration value="BitTwo" />
