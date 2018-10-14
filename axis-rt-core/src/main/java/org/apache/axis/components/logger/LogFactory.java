@@ -16,36 +16,15 @@
 
 package org.apache.axis.components.logger;
 
-import org.apache.commons.discovery.tools.DiscoverSingleton;
 import org.apache.commons.logging.Log;
-
-import java.security.AccessController;
-import java.security.PrivilegedAction;
 
 
 /**
  * @author Richard A. Sitze
  */
 public class LogFactory {
-    /**
-     * Override group context..
-     */
-    private static final org.apache.commons.logging.LogFactory logFactory =
-        getLogFactory();
 
     public static Log getLog(String name) {
         return org.apache.commons.logging.LogFactory.getLog(name);
-    }
-    
-    private static final org.apache.commons.logging.LogFactory getLogFactory() {
-        return (org.apache.commons.logging.LogFactory)
-            AccessController.doPrivileged(
-                new PrivilegedAction() {
-                    public Object run() {
-                        return DiscoverSingleton.find(org.apache.commons.logging.LogFactory.class,
-                                       org.apache.commons.logging.LogFactory.FACTORY_PROPERTIES,
-                                       org.apache.commons.logging.LogFactory.FACTORY_DEFAULT);
-                    }
-                });
     }
 }
