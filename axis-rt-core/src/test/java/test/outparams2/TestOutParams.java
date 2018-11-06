@@ -86,7 +86,7 @@ public class TestOutParams extends TestCase {
 
 	description = service.getServiceDescription();
 	operation = description.getOperationByName("serviceMethod");
-	parameter = operation.getParamByQName(new QName("", "out1"));
+	parameter = operation.getParamByQName(new QName("", "in1"));
 	    
 	assertEquals(ParameterDesc.INOUT, parameter.getMode());
 
