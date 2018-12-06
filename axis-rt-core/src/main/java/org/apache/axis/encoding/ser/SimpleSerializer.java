@@ -16,24 +16,26 @@
 
 package org.apache.axis.encoding.ser;
 
+import java.io.IOException;
+import java.math.BigDecimal;
+
+import javax.xml.namespace.QName;
+
 import org.apache.axis.AxisFault;
 import org.apache.axis.Constants;
 import org.apache.axis.description.FieldDesc;
 import org.apache.axis.description.TypeDesc;
 import org.apache.axis.encoding.SerializationContext;
-import org.apache.axis.encoding.SimpleValueSerializer;
 import org.apache.axis.encoding.SimpleType;
+import org.apache.axis.encoding.SimpleValueSerializer;
 import org.apache.axis.utils.BeanPropertyDescriptor;
 import org.apache.axis.utils.BeanUtils;
-import org.apache.axis.utils.Messages;
 import org.apache.axis.utils.JavaUtils;
+import org.apache.axis.utils.Messages;
 import org.apache.axis.wsdl.fromJava.Types;
 import org.w3c.dom.Element;
 import org.xml.sax.Attributes;
 import org.xml.sax.helpers.AttributesImpl;
-
-import javax.xml.namespace.QName;
-import java.io.IOException;
 
 /**
  * Serializer for primitives and anything simple whose value is obtained with toString()
@@ -127,6 +129,9 @@ public class SimpleSerializer implements SimpleValueSerializer {
             }
         } else if (value instanceof QName) {
             return context.qName2String((QName)value);
+        }
+        else if (value instanceof BigDecimal) {
+        	return ((BigDecimal) value).toPlainString();
         }
 
         if (propertyDescriptor != null && !(value instanceof SimpleType)) {
