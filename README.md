@@ -15,6 +15,7 @@ Security fixes
 * [CVE-2012-5784](https://nvd.nist.gov/vuln/detail/CVE-2012-5784)
 * [CVE-2014-3596](https://nvd.nist.gov/vuln/detail/CVE-2014-3596)
 * [CVE-2018-8032](https://nvd.nist.gov/vuln/detail/CVE-2018-8032)
+* [CVE-2019-0227](https://nvd.nist.gov/vuln/detail/CVE-2019-0227)
 
 
 
