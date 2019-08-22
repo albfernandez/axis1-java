@@ -1,5 +1,7 @@
 language: java
 
+dist: trusty 
+
 install: mvn install -DskipTests=true -Dgpg.skip=true -Dmaven.javadoc.skip=true
 
 jdk:
