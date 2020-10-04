@@ -32,7 +32,7 @@
         Root POM for the Axis Maven plugins.
     </description>
     <properties>
-        <maven.version>2.0.9</maven.version>
+        <maven.version>2.1.0</maven.version>
     </properties>
     <dependencyManagement>
         <dependencies>
