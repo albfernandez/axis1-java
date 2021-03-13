@@ -39,7 +39,12 @@ public class LoadTest extends TestCase {
     
     public static TestSuite suite() {
         TestSuite suite = new TestSuite();
-        File[] files = new File("src/test/wsdd").listFiles();
+        File wsdd = new File("src/test/wsdd");
+        if (!wsdd.exists()) {
+        	wsdd = new File ("../src/test/wsdd");
+        }
+        
+        File[] files = wsdd.listFiles();
         for (int i=0; i<files.length; i++) {
             File file = files[i];
             if (file.isFile()) {
