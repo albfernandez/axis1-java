@@ -30,9 +30,6 @@
     <description>
         Contains a set of tests that check that Axis remains compatible with Spring (remoting).
     </description>
-    <properties>
-        <javaVersion>1.5</javaVersion>
-    </properties>
     <dependencies>
         <dependency>
             <groupId>${project.groupId}</groupId>

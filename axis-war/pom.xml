@@ -28,9 +28,6 @@
     <artifactId>axis-war</artifactId>
     <packaging>war</packaging>
     <name>Axis :: WAR</name>
-    <properties>
-        <javaVersion>1.5</javaVersion>
-    </properties>
     <dependencies>
         <dependency>
             <groupId>${project.groupId}</groupId>

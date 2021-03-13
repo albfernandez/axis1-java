@@ -67,7 +67,7 @@
         <module>axis-rt-core</module>
         <module>axis-rt-jws</module>
         <module>axis-rt-databinding-castor</module>
-        <module>axis-rt-databinding-xmlbeans</module>
+<!--         <module>axis-rt-databinding-xmlbeans</module> -->
         <module>axis-rt-management</module>
         <module>axis-rt-provider-bsf</module>
         <module>axis-rt-soapmonitor</module>
@@ -150,6 +150,11 @@
                 <artifactId>jetty</artifactId>
                 <version>6.1.26</version>
             </dependency>
+            <dependency>
+				<groupId>org.glassfish.corba</groupId>
+				<artifactId>glassfish-corba-orb</artifactId>
+				<version>4.2.3</version>
+			</dependency>
         </dependencies>
     </dependencyManagement>
     <prerequisites>
@@ -297,7 +302,7 @@
                 <artifactId>animal-sniffer-maven-plugin</artifactId>
                 <!-- Note: 1.9 contains a call to a Java 7 specific method (java.nio.CharBuffer.subSequence(II)Ljava/nio/CharBuffer;)
                            that is triggered when an undefined reference is found. This breaks error reporting on Java 5/6. -->
-                <version>1.8</version>
+                <version>1.20</version>
                 <executions>
                     <execution>
                         <phase>verify</phase>
