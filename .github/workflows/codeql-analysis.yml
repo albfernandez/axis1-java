@@ -58,7 +58,9 @@ jobs:
     #    and modify them (or add more) to build your code if your project
     #    uses a compiled language
 
-    #- run: |
+    - run: |
+       mvn clean test-compile -Dcheckstyle.skip=true -Dgpg.skip=true -B -V -Pquickrun -Dfindbugs.skip -Dpmd.skip=true -Denforcer.skip -Dmaven.javadoc.skip -DskipTests -Dmaven.test.skip.exec -Dlicense.skip=true -Drat.skip=true
+
     #   make bootstrap
     #   make release
 
