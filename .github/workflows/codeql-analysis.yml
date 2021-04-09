@@ -59,7 +59,7 @@ jobs:
     #    uses a compiled language
 
     - run: |
-       mvn clean test-compile -Dcheckstyle.skip=true -Dgpg.skip=true -B -V -Pquickrun -Dfindbugs.skip -Dpmd.skip=true -Denforcer.skip -Dmaven.javadoc.skip -DskipTests -Dmaven.test.skip.exec -Dlicense.skip=true -Drat.skip=true
+       mvn clean package -Dcheckstyle.skip=true -Dgpg.skip=true -B -V -Dfindbugs.skip -Dpmd.skip=true -Denforcer.skip -Dmaven.javadoc.skip -DskipTests -Dmaven.test.skip.exec -Dlicense.skip=true -Drat.skip=true
 
     #   make bootstrap
     #   make release
