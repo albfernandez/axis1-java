@@ -35,6 +35,12 @@ jobs:
         # We must fetch at least the immediate parents so that if this is
         # a pull request then we can checkout the head.
         fetch-depth: 2
+        
+    - name: Setup Java
+      uses: actions/setup-java@v2
+      with:
+        distribution: 'adopt'
+        java-version: '8'
 
     # Initializes the CodeQL tools for scanning.
     - name: Initialize CodeQL
@@ -59,7 +65,7 @@ jobs:
     #    uses a compiled language
 
     - run: |
-       mvn clean package -Dcheckstyle.skip=true -Dgpg.skip=true -B -V -Dfindbugs.skip -Dpmd.skip=true -Denforcer.skip -Dmaven.javadoc.skip -DskipTests -Dmaven.test.skip.exec -Dlicense.skip=true -Drat.skip=true
+       mvn clean package -B -V  -Dcheckstyle.skip=true -Dgpg.skip=true -Dfindbugs.skip -Dpmd.skip=true -Denforcer.skip -Dmaven.javadoc.skip -DskipTests -Dmaven.test.skip.exec -Dlicense.skip=true -Drat.skip=true
 
     #   make bootstrap
     #   make release
