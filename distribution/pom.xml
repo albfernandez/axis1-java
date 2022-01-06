@@ -53,7 +53,7 @@
             <version>${project.version}</version>
         </dependency>
         <dependency>
-            <groupId>log4j</groupId>
+            <groupId>com.github.albfernandez</groupId>
             <artifactId>log4j</artifactId>
         </dependency>
         <dependency>

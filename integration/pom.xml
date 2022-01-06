@@ -57,7 +57,7 @@
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>log4j</groupId>
+            <groupId>com.github.albfernandez</groupId>
             <artifactId>log4j</artifactId>
             <scope>test</scope>
         </dependency>
