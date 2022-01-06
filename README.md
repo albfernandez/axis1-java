@@ -12,6 +12,7 @@ This repo is a fork of Axis 1.4 with the latest svn changes and security fixes.
 
 Security fixes
 
+* [CVE-2007-2353](https://nvd.nist.gov/vuln/detail/CVE-2007-2353)
 * [CVE-2012-5784](https://nvd.nist.gov/vuln/detail/CVE-2012-5784)
 * [CVE-2014-3596](https://nvd.nist.gov/vuln/detail/CVE-2014-3596)
 * [CVE-2018-8032](https://nvd.nist.gov/vuln/detail/CVE-2018-8032)
