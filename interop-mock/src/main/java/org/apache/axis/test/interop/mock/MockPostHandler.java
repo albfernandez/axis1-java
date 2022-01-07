@@ -81,7 +81,7 @@ public class MockPostHandler extends SOAPHandler implements InitializingBean {
         try {
             requestContentType = new MimeType(requestContentTypeHeader);
         } catch (MimeTypeParseException ex) {
-            httpResponse.sendError(HttpServletResponse.SC_BAD_REQUEST, "Invalid Content-Type header: " + ex.getMessage());
+            httpResponse.sendError(HttpServletResponse.SC_BAD_REQUEST, "Invalid Content-Type header");
             return;
         }
         String requestBaseContentType = requestContentType.getBaseType().toLowerCase(Locale.ENGLISH);
