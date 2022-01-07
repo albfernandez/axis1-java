@@ -159,19 +159,7 @@
     </dependencyManagement>
     <prerequisites>
         <maven>3.0.3</maven>
-    </prerequisites>
-    <pluginRepositories>
-        <pluginRepository>
-            <id>veithen-github-mvn-repo</id>
-            <url>https://raw.github.com/veithen/mvn-repo/master/snapshots/</url>
-            <releases>
-                <enabled>false</enabled>
-            </releases>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
-        </pluginRepository>
-    </pluginRepositories>
+    </prerequisites>    
     <build>
         <pluginManagement>
             <plugins>
