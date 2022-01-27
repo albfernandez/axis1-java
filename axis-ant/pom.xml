@@ -150,8 +150,8 @@
                 </configuration>
             </plugin>
             <plugin>
-                <groupId>com.github.veithen.filecheck</groupId>
-                <artifactId>filecheck-maven-plugin</artifactId>
+   				<groupId>com.github.veithen.filecheck</groupId>
+    			<artifactId>filecheck-maven-plugin</artifactId>
                 <executions>
                     <execution>
                         <phase>test</phase>
