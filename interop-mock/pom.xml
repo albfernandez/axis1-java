@@ -65,10 +65,10 @@
             <artifactId>commons-io</artifactId>
             <version>2.7</version>
         </dependency>
-        <dependency>
-            <groupId>com.github.albfernandez</groupId>
-            <artifactId>log4j</artifactId>
-        </dependency>
+		<dependency>
+		    <groupId>ch.qos.reload4j</groupId>
+		    <artifactId>reload4j</artifactId>
+		</dependency>
     </dependencies>
     <build>
         <plugins>

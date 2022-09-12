@@ -52,10 +52,10 @@
             <artifactId>axis-saaj</artifactId>
             <version>${project.version}</version>
         </dependency>
-        <dependency>
-            <groupId>com.github.albfernandez</groupId>
-            <artifactId>log4j</artifactId>
-        </dependency>
+		<dependency>
+		    <groupId>ch.qos.reload4j</groupId>
+		    <artifactId>reload4j</artifactId>
+		</dependency>
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
