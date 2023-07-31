@@ -46,7 +46,7 @@
         <dependency>
             <groupId>castor</groupId>
             <artifactId>castor</artifactId>
-            <version>0.9.4.2</version>
+            <version>0.9.9.1</version>
         </dependency>
     </dependencies>
 </project>
