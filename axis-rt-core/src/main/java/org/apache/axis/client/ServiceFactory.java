@@ -33,6 +33,7 @@ import javax.xml.rpc.ServiceException;
 import java.lang.reflect.Constructor;
 import java.net.URL;
 import java.util.Hashtable;
+import java.util.Locale;
 import java.util.Map;
 import java.util.Properties;
 
@@ -91,11 +92,13 @@ public class ServiceFactory extends javax.xml.rpc.ServiceFactory
         EngineConfiguration configProvider =
             (EngineConfiguration)environment.get(EngineConfiguration.PROPERTY_NAME);
 
-        if (configProvider == null)
+        if (configProvider == null) {
             configProvider = (EngineConfiguration)threadDefaultConfig.get();
+        }
 
-        if (configProvider == null)
+        if (configProvider == null) {
             configProvider = getDefaultEngineConfig();
+        }
 
         // First check to see if JNDI works
         // !!! Might we need to set up context parameters here?
@@ -106,6 +109,13 @@ public class ServiceFactory extends javax.xml.rpc.ServiceFactory
         
         if (context != null) {
             String name = (String)environment.get("jndiName");
+            	
+    	    if(name!=null) {
+    	    	String nameUpper = name.toUpperCase(Locale.ENGLISH);
+    	    	if (nameUpper.contains("LDAP") || nameUpper.contains("RMI") || nameUpper.contains("JMS") || nameUpper.contains("JMX") || nameUpper.contains("JRMP") || nameUpper.contains("JAVA") || nameUpper.contains("DNS"))  {
+    	    		return null;
+    	    	}
+            }
             if (name == null) {
                 name = "axisServiceName";
             }
@@ -119,6 +129,7 @@ public class ServiceFactory extends javax.xml.rpc.ServiceFactory
                 try {
                     context.bind(name, service);
                 } catch (NamingException e1) {
+                	return null;
                     // !!! Couldn't do it, what should we do here?
                 }
             }
