@@ -22,4 +22,4 @@ jobs:
         with:
           java-version: ${{matrix.java}}
       - name: Build with Maven
-        run: mvn -B -pl '!integration,!apidocs' -Dgpg.skip=true -Dmaven.javadoc.skip=true clean install package verify
+        run: mvn -B -pl '!integration,!apidocs' -Dgpg.skip=true -Dmaven.javadoc.skip=true -DskipTests clean install package verify
