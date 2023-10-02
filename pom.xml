@@ -27,7 +27,7 @@
     <groupId>org.apache.axis</groupId>
     <artifactId>axis-project</artifactId>
     <name>Axis</name>
-    <version>1.4.1-SNAPSHOT</version>
+    <version>1.4-ayg-04</version>
     <packaging>pom</packaging>
     <url>${baseUrl}/</url>
     <issueManagement>
@@ -67,7 +67,7 @@
         <module>axis-rt-core</module>
         <module>axis-rt-jws</module>
         <module>axis-rt-databinding-castor</module>
-<!--         <module>axis-rt-databinding-xmlbeans</module> -->
+        <module>axis-rt-databinding-xmlbeans</module> 
         <module>axis-rt-management</module>
         <module>axis-rt-provider-bsf</module>
         <module>axis-rt-soapmonitor</module>

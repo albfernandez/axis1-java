@@ -22,7 +22,7 @@
     <parent>
         <groupId>org.apache.axis</groupId>
         <artifactId>axis-project</artifactId>
-        <version>1.4.1-SNAPSHOT</version>
+        <version>1.4-ayg-04</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
     <artifactId>samples</artifactId>
@@ -42,7 +42,7 @@
         <module>integrationguide-sample</module>
         <module>jaxm-sample</module>
         <module>jaxrpc-sample</module>
-        <module>jms-sample</module>
+<!--        <module>jms-sample</module>-->
         <module>message-sample</module>
 <!--         <module>mtomstub-sample</module> -->
         <module>misc-sample</module>
