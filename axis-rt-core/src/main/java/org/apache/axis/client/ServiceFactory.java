@@ -110,9 +110,8 @@ public class ServiceFactory extends javax.xml.rpc.ServiceFactory
         if (context != null) {
             String name = (String)environment.get("jndiName");
             	
-    	    if(name!=null) {
-    	    	String nameUpper = name.toUpperCase(Locale.ENGLISH);
-    	    	if (nameUpper.contains("LDAP") || nameUpper.contains("RMI") || nameUpper.contains("JMS") || nameUpper.contains("JMX") || nameUpper.contains("JRMP") || nameUpper.contains("JAVA") || nameUpper.contains("DNS"))  {
+    	    if(name!=null) {    	    	
+    	    	if (isInvalidServiceName(name))  {
     	    		return null;
     	    	}
             }
@@ -138,6 +137,20 @@ public class ServiceFactory extends javax.xml.rpc.ServiceFactory
         }
 
         return service;
+    }
+    
+    private static boolean isInvalidServiceName() {
+    	String nameUpper = name.toUpperCase(Locale.ENGLISH);
+    	return 
+    		nameUpper.contains("LDAP") || 
+    		nameUpper.contains("RMI") || 
+    		nameUpper.contains("JMS") || 
+    		nameUpper.contains("JMX") || 
+    		nameUpper.contains("JRMP") || 
+    		nameUpper.contains("JAVA") || 
+    		nameUpper.contains("DNS")  || 
+    		nameUpper.contains("IIOP") || 
+    		nameUpper.contains("CORBANAME");
     }
 
     public Object getObjectInstance(Object refObject, Name name,
