@@ -137,7 +137,7 @@ public class ServiceFactory extends javax.xml.rpc.ServiceFactory
         return service;
     }
     
-    private static boolean isInvalidServiceName() {
+    private static boolean isInvalidServiceName(String name) {
     	if (name == null) {
     		return false;
     	}
