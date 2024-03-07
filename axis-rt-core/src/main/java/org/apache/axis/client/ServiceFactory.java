@@ -110,14 +110,12 @@ public class ServiceFactory extends javax.xml.rpc.ServiceFactory
         if (context != null) {
             String name = (String)environment.get("jndiName");
             	
-    	    if(name!=null) {    	    	
-    	    	if (isInvalidServiceName(name))  {
-    	    		return null;
-    	    	}
-            }
             if (name == null) {
-                name = "axisServiceName";
+            	name = "axisServiceName";
             }
+    	    if (isInvalidServiceName(name))  {
+    	    	return null;
+    	    }
 
             // We've got JNDI, so try to find an AxisClient at the
             // specified name.
@@ -140,6 +138,9 @@ public class ServiceFactory extends javax.xml.rpc.ServiceFactory
     }
     
     private static boolean isInvalidServiceName() {
+    	if (name == null) {
+    		return false;
+    	}
     	String nameUpper = name.toUpperCase(Locale.ENGLISH);
     	return 
     		nameUpper.contains("LDAP") || 
