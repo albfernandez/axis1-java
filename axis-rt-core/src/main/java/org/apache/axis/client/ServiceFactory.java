@@ -48,6 +48,7 @@ import java.util.Properties;
 public class ServiceFactory extends javax.xml.rpc.ServiceFactory
         implements ObjectFactory
 {
+	protected static Log log = LogFactory.getLog(ServiceFactory.class.getName());
     // Constants for RefAddrs in the Reference.
     public static final String SERVICE_CLASSNAME  = "service classname";
     public static final String WSDL_LOCATION      = "WSDL location";
@@ -110,12 +111,15 @@ public class ServiceFactory extends javax.xml.rpc.ServiceFactory
         if (context != null) {
             String name = (String)environment.get("jndiName");
             	
+
+    	    if (isInvalidServiceName(name))  {
+    	    	log.warn("returning null, jndiName received by ServiceFactory.getService() is not supported by this method: " + name);
+    	    	return null;
+    	    }
+    	    
             if (name == null) {
             	name = "axisServiceName";
             }
-    	    if (isInvalidServiceName(name))  {
-    	    	return null;
-    	    }
 
             // We've got JNDI, so try to find an AxisClient at the
             // specified name.
