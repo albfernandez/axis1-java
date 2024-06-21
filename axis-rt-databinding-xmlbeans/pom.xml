@@ -59,6 +59,10 @@
                         </goals>
                     </execution>
                 </executions>
+                <configuration>
+					<javaSource>1.8</javaSource>
+					<noJavac>true</noJavac>
+				</configuration>
             </plugin>        
         </plugins>
     </build>
