@@ -60,7 +60,7 @@
                     </execution>
                 </executions>
                 <configuration>
-					<javaSource>1.8</javaSource>
+					<javaSource>${javaVersion}</javaSource>
 					<noJavac>true</noJavac>
 				</configuration>
             </plugin>        
