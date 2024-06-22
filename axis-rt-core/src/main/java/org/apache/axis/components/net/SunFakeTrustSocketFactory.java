@@ -21,9 +21,11 @@ import org.apache.axis.components.logger.LogFactory;
 import org.apache.axis.utils.Messages;
 import org.apache.commons.logging.Log;
 
-import com.sun.net.ssl.SSLContext;
-import com.sun.net.ssl.TrustManager;
-import com.sun.net.ssl.X509TrustManager;
+import javax.net.ssl.SSLContext;
+import javax.net.ssl.TrustManager;
+import javax.net.ssl.X509TrustManager;
+import java.security.cert.X509Certificate;
+import java.security.cert.CertificateException;
 
 /**
  * Hook for Axis sender, allowing unsigned server certs
@@ -31,8 +33,7 @@ import com.sun.net.ssl.X509TrustManager;
 public class SunFakeTrustSocketFactory extends SunJSSESocketFactory {
 
     /** Field log           */
-    protected static Log log =
-            LogFactory.getLog(SunFakeTrustSocketFactory.class.getName());
+    protected static Log log = LogFactory.getLog(SunFakeTrustSocketFactory.class.getName());
 
     /**
      * Constructor FakeTrustSocketFactory
@@ -74,52 +75,36 @@ public class SunFakeTrustSocketFactory extends SunJSSESocketFactory {
     public static class FakeX509TrustManager implements X509TrustManager {
 
         /** Field log           */
-        protected static Log log =
-                LogFactory.getLog(FakeX509TrustManager.class.getName());
+        protected static Log log = LogFactory.getLog(FakeX509TrustManager.class.getName());
 
-        /**
-         * Method isClientTrusted
-         *
-         * @param chain
-         *
-         * @return
-         */
-        public boolean isClientTrusted(java.security.cert
-                .X509Certificate[] chain) {
 
-            if (log.isDebugEnabled()) {
+        @Override
+        public void checkClientTrusted(X509Certificate[] chain, String authType) throws CertificateException {
+        	if (log.isDebugEnabled()) {
                 log.debug(Messages.getMessage("ftsf03"));
             }
-            return true;
         }
-
-        /**
-         * Method isServerTrusted
-         *
-         * @param chain
-         *
-         * @return
-         */
-        public boolean isServerTrusted(java.security.cert
-                .X509Certificate[] chain) {
-
-            if (log.isDebugEnabled()) {
+        
+        @Override
+        public void checkServerTrusted(X509Certificate[] chain, String authType) throws CertificateException {
+        	if (log.isDebugEnabled()) {
                 log.debug(Messages.getMessage("ftsf04"));
             }
-            return true;
         }
+
+        
 
         /**
          * Method getAcceptedIssuers
          *
          * @return
          */
-        public java.security.cert.X509Certificate[] getAcceptedIssuers() {
+        public X509Certificate[] getAcceptedIssuers() {
 
             if (log.isDebugEnabled()) {
                 log.debug(Messages.getMessage("ftsf05"));
             }
-            return null;
+            return new X509Certificate[0];
         }
     }
 }
